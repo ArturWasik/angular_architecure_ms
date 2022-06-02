@@ -1,5 +1,8 @@
-module.exports = {
+const { getJestProjects } = require('@nrwl/jest');
+
+export default {
   projects: [
+    ...getJestProjects(),
     '<rootDir>/apps/flight-app',
     '<rootDir>/libs/flight-lib',
     '<rootDir>/libs/logger-lib',

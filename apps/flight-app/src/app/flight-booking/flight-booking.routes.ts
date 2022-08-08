@@ -1,4 +1,5 @@
 import {Routes} from '@angular/router';
+import { AirportComponent } from './airport/airport.component';
 import {FlightBookingComponent} from './flight-booking.component';
 import {FlightEditComponent} from './flight-edit/flight-edit.component';
 import {FlightSearchComponent} from './flight-search/flight-search.component';
@@ -9,6 +10,10 @@ export const FLIGHT_BOOKING_ROUTES: Routes = [
     path: 'flight-booking',
     component: FlightBookingComponent,
     children: [
+      {
+        path: 'airports',
+        component: AirportComponent
+      },
       {
         path: 'flight-search',
         component: FlightSearchComponent

@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { LoggerService } from '@flight-workspace/logger-lib';
 
 @Component({
   selector: 'flight-app',
@@ -7,4 +8,8 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 
+  constructor(private loggerService: LoggerService) {
+    this.loggerService.log('log');
+    this.loggerService.debug('debug');
+  }
 }

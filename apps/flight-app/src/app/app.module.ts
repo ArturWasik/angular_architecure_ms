@@ -15,12 +15,16 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoggerModule } from '@flight-workspace/logger-lib';
+import { CustomLogFormatterService } from './shared/logging/custom-log-formatter.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
-    LoggerModule.forRoot({ enableDebug: true }),
+    LoggerModule.forRoot({
+      enableDebug: true,
+      logFormatterType: CustomLogFormatterService
+    }),
     FlightBookingModule,
 
     BrowserAnimationsModule,
